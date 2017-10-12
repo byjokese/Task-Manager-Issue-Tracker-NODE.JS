@@ -2,6 +2,30 @@ body {
 	overflow-x: hidden;
 }
 
+.navbar {
+	background-color: #484770;
+	/*border: 2px #484770;*/
+	padding: 0px;
+	padding-left: 20px;
+}
+
+.nav-item {
+	margin: 0px;
+}
+
+.nav-link {
+	color: white;
+}
+
+.nav-link:hover {
+	color: rgb(129, 129, 129);
+}
+
+.active {
+	background-color: #2e2d55;
+	border-bottom: 4px solid orange;
+}
+
 .board-menu {
 	background-color: #2e2d55;
 	height: 50px;
@@ -73,6 +97,18 @@ body {
 	box-shadow: 3px 3px 5px #888888;
 	display: flex;
 	margin-right: 9px;
+}
+
+.board-card:hover {
+	-moz-box-shadow: 0 0 8px 2px #3377ff;
+	-webkit-box-shadow: 0 0 8px 2px #3377ff;
+	box-shadow: 0 0 8px 2px #3377ff;
+}
+
+.board-card-active {
+	-moz-box-shadow: 0 0 8px 2px #3377ff;
+	-webkit-box-shadow: 0 0 8px 2px #3377ff;
+	box-shadow: 0 0 8px 2px #3377ff;
 }
 
 .board-card-color-code {
@@ -226,4 +262,50 @@ body {
 
 .footer-button:hover {
 	color: #9E9E9E;
+}
+
+#working-card {
+	font-style: italic;
+}
+
+
+/* MODALS */
+
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+	background-color: #fefefe;
+	margin: 10% auto;
+	padding: 10px;
+	border: 1px solid #888;
+	width: 50%;
+}
+
+.close {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+#editContentBody {
+	display: flex;
+	display: -webkit-flex;
 }
