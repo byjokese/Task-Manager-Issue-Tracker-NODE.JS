@@ -18,27 +18,38 @@ $(".board-card").contextmenu(function () {
 // =============================================================================
 
 // Get the modal
-var modal = document.getElementById('editCardModal');
+var modalAdd = document.getElementById('addCardModal');
+var modalEdit = document.getElementById('editCardModal');
 
 // Get the button that opens the modal
-var btn = document.getElementById("editMenuButton");
+var btnAdd = document.getElementById("addMenuButton");
+var btnEdit = document.getElementById("editMenuButton");
 
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+var closeModal = document.getElementsByClassName("closeModal")[0];
 
 // When the user clicks on the button, open the modal
-btn.onclick = function () {
-	modal.style.display = "block";
+btnAdd.onclick = function () {
+	modalAdd.style.display = "block";
+}
+
+btnEdit.onclick = function () {
+	modalEdit.style.display = "block";
 }
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function () {
-	modal.style.display = "none";
+closeModal.onclick = function (event) {
+	modalEdit.style.display = "none";
+	modalAdd.style.display = "none";
+	console.log(event)
 }
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
-	if (event.target == modal) {
-		modal.style.display = "none";
+	if (event.target == modalEdit) {
+		modalEdit.style.display = "none";
+	}
+	if (event.target == modalAdd) {
+		modalAdd.style.display = "none";
 	}
 }
