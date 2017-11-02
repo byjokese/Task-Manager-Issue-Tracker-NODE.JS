@@ -57,8 +57,20 @@
 					<small id="helpIdPriority" class="text-muted">Describes the priority of the task.</small>
 				</div>
 				<div class="form-group">
-					<label>Sub Tasks:</label>
-					<div style="background-color: #999;width:100%; height:100px;"></div>
+					<div class="flex-container flex-justify">
+						<label>Sub Tasks:</label>
+						<div class="flex-container flex-right">
+							<button class="btn myButton" id="addItemToSubtaskModal">
+								<span class="fa fa-plus button-icon"></span>Add
+							</button>
+							<button class="btn myButton" id="removeItemToSubtaskModal">
+								<span class="fa fa-minus button-icon"></span>Remove
+							</button>
+						</div>
+					</div>
+					<div style="background-color: rgb(226, 226, 226);width:100%;" class="subtask-container" id="subtask-container-addModal">
+						<ul class="card-subTaks" id="card-subTaks"></ul>
+					</div>
 				</div>
 				<button type="submit" class="btn btn-success">Save</button>
 			</div>

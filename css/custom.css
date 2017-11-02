@@ -309,3 +309,58 @@ body {
 	display: flex;
 	display: -webkit-flex;
 }
+
+.subtask-container {
+	margin-top: 7px;
+	min-height: 100px;
+	max-height: 220px;
+	overflow-y: scroll;
+}
+
+.subtask-container ul {
+	padding: 0px;
+}
+
+.subtask-container li {
+	background-color: rgb(247, 247, 247);
+	list-style-type: none;
+	padding: 2px;
+	padding-left: 5px;
+	cursor: pointer;
+}
+
+.subtask-container li:hover {
+	background-color: rgb(235, 235, 235);
+}
+
+.activeSubTask {
+	background-color: rgb(196, 196, 196) !important;
+}
+
+.subTaskNewVal {
+	height: 20px;
+}
+
+#addItemToSubtaskModal {
+	margin-right: 5px;
+}
+
+
+/* FLEX */
+
+.flex-container {
+	display: flex;
+	flex-wrap: nowrap;
+}
+
+.flex-justify {
+	justify-content: space-between;
+}
+
+.flex-right {
+	justify-content: flex-end;
+}
+
+.flex-left {
+	justify-content: flex-start;
+}

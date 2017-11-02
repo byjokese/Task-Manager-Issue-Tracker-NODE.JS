@@ -53,3 +53,52 @@ window.onclick = function (event) {
 		modalAdd.style.display = "none";
 	}
 }
+
+/*Modal add item to subtasks */
+
+var ul_subTaskList = document.getElementById("card-subTaks");
+
+var addSubTaskButtonModal = document.getElementById("addItemToSubtaskModal");
+var removeSubTaskButtonModal = document.getElementById("removeItemToSubtaskModal");
+
+addSubTaskButtonModal.onclick = function (event) {
+	var li_newSubTask = document.createElement("li");
+	li_newSubTask.appendChild(document.createTextNode("Four"));
+	//	li_newSubTask.setAttribute("id", "TaskID_SubTaskID");
+	li_newSubTask.setAttribute("class", "subtask_li");
+	ul_subTaskList.appendChild(li_newSubTask);
+	updateVal(li_newSubTask, " ");
+}
+
+removeSubTaskButtonModal.onclick = function (event) {
+	$('#card-subTaks li.activeSubTask').remove()
+}
+
+$("#card-subTaks").on("click", ".subtask_li", function () {
+	if ($(this).hasClass('activeSubTask'))
+		$(this).removeClass('activeSubTask');
+	else {
+		$(".subtask_li").removeClass('activeSubTask');
+		$(this).addClass('activeSubTask');
+	}
+});
+
+function updateVal(currentEle, value) {
+	$(currentEle).html('<input class="subTaskNewVal" type="text" value="' + value + '" />');
+	$(".subTaskNewVal").focus();
+	$(".subTaskNewVal").keyup(function (event) {
+		if (event.keyCode == 13) {
+			$(currentEle).html($(".subTaskNewVal").val().trim());
+		}
+	});
+
+	/*$(document).click(function () {
+		$(currentEle).html($(".thVal").val().trim());
+	});*/
+}
+$("#card-subTaks").on("dblclick", ".subtask_li", function (event) {
+	event.stopPropagation();
+	var currentEle = $(this);
+	var value = $(this).html();
+	updateVal(currentEle, value);
+});
